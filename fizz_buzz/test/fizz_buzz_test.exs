@@ -23,5 +23,9 @@ defmodule FizzBuzzTest do
     assert list == [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz", 16, 17, "Fizz", 19, "Buzz"]
   end
 
-
+  test "Rejects non-number input" do
+    assert_raise RuntimeError, "Not a number", fn ->
+      FizzBuzz.fizzer("Nonsense")
+    end
+  end
 end
